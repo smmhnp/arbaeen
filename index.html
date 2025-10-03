@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خبرگزاری مدرن</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+        }
+        
+        .postmodern-shape {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg"></div>
+                    <span class="text-xl font-bold text-white">خبرگزاری مدرن</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors">خانه</a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors">سیاسی</a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors">اقتصادی</a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors">ورزشی</a>
+                    <a href="#" class="text-white hover:text-blue-300 transition-colors">فناوری</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen hero-bg flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-gradient"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full floating"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-blue-400 bg-opacity-20 postmodern-shape floating" style="animation-delay: -2s;"></div>
+        <div class="absolute bottom-40 left-20 w-12 h-12 bg-purple-400 bg-opacity-20 rounded-lg floating" style="animation-delay: -4s;"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                آینده خبر
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                    امروز شروع می‌شود
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 font-light">
+                تجربه‌ای نو از دریافت اخبار با طراحی مدرن و محتوای باکیفیت
+            </p>
+            <button class="glass px-8 py-4 rounded-full text-white font-medium hover:bg-white hover:bg-opacity-20 transition-all duration-300 transform hover:scale-105">
+                کاوش اخبار
+            </button>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Featured News Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">اخبار برگزیده</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <article class="news-card glass-dark rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="absolute bottom-4 right-4 glass px-3 py-1 rounded-full">
+                            <span class="text-white text-sm">سیاسی</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">تحولات جدید در عرصه سیاست داخلی</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">بررسی آخرین تصمیمات مهم در حوزه سیاست داخلی و تأثیرات آن بر جامعه...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400 text-sm">۲ ساعت پیش</span>
+                            <button class="text-blue-400 hover:text-blue-300 transition-colors">ادامه مطلب</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Card 2 -->
+                <article class="news-card glass-dark rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-700 relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="absolute bottom-4 right-4 glass px-3 py-1 rounded-full">
+                            <span class="text-white text-sm">فناوری</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">انقلاب هوش مصنوعی در صنعت</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">نگاهی به جدیدترین پیشرفت‌های هوش مصنوعی و کاربردهای آن در زندگی روزمره...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400 text-sm">۴ ساعت پیش</span>
+                            <button class="text-purple-400 hover:text-purple-300 transition-colors">ادامه مطلب</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Card 3 -->
+                <article class="news-card glass-dark rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-700 relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                        <div class="absolute bottom-4 right-4 glass px-3 py-1 rounded-full">
+                            <span class="text-white text-sm">اقتصادی</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">رشد اقتصادی در بخش‌های نوین</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">تحلیل وضعیت اقتصادی کشور و بررسی فرصت‌های سرمایه‌گذاری جدید...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400 text-sm">۶ ساعت پیش</span>
+                            <button class="text-green-400 hover:text-green-300 transition-colors">ادامه مطلب</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">دسته‌بندی اخبار</h2>
+                <p class="text-gray-600 text-lg">اخبار را بر اساس علاقه‌مندی‌های خود دنبال کنید</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform cursor-pointer">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">🏛️</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">سیاسی</h3>
+                    <p class="text-gray-600 text-sm">۱۲۳ خبر</p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform cursor-pointer">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">💼</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">اقتصادی</h3>
+                    <p class="text-gray-600 text-sm">۸۹ خبر</p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform cursor-pointer">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">⚽</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">ورزشی</h3>
+                    <p class="text-gray-600 text-sm">۱۵۶ خبر</p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform cursor-pointer">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-2xl">💻</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">فناوری</h3>
+                    <p class="text-gray-600 text-sm">۷۴ خبر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 space-x-reverse mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg"></div>
+                        <span class="text-xl font-bold">خبرگزاری مدرن</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        ارائه‌دهنده اخبار معتبر و به‌روز با طراحی مدرن و تجربه کاربری بی‌نظیر
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">دسته‌بندی‌ها</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">سیاسی</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">اقتصادی</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">ورزشی</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">فناوری</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">خدمات</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">خبرنامه</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">اپلیکیشن موبایل</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">آرشیو اخبار</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">عضویت در خبرنامه</h3>
+                    <p class="text-gray-400 mb-4">آخرین اخبار را در ایمیل خود دریافت کنید</p>
+                    <div class="flex">
+                        <input type="email" placeholder="ایمیل شما" class="flex-1 px-4 py-2 rounded-r-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500">
+                        <button class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-l-lg hover:from-blue-600 hover:to-purple-700 transition-all">
+                            عضویت
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; ۱۴۰۳ خبرگزاری مدرن. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988df9d8e652d39e',t:'MTc1OTUxMDYxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
